@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 2.9 (Jython 2.7.0 on java1.7.0_65)" generated="20150904 16:48:37.722">
+<suite source="/Users/trentford/Documents/TicTacToe_TNF/acceptance/TicTacToeTests.txt" id="s1" name="TicTacToeTests">
+<test id="s1-t1" name="Win Diagonally as X">
+<kw library="TicTacToeKeywords" name="Start New Game">
+<status status="PASS" starttime="20150904 16:48:38.726" endtime="20150904 16:48:38.733"></status>
+</kw>
+<kw library="TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20150904 16:48:38.737" endtime="20150904 16:48:38.745"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+<arg>X</arg>
+</arguments>
+<kw library="TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg timestamp="20150904 16:48:38.770" level="INFO">${m} = </msg>
+<status status="PASS" starttime="20150904 16:48:38.761" endtime="20150904 16:48:38.772"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<msg timestamp="20150904 16:48:38.787" level="FAIL"> != X</msg>
+<status status="FAIL" starttime="20150904 16:48:38.776" endtime="20150904 16:48:38.790"></status>
+</kw>
+<status status="FAIL" starttime="20150904 16:48:38.749" endtime="20150904 16:48:38.795"></status>
+</kw>
+<status status="FAIL" starttime="20150904 16:48:38.713" endtime="20150904 16:48:38.799" critical="yes"> != X</status>
+</test>
+<test id="s1-t2" name="Win Horizontally as O">
+<kw library="TicTacToeKeywords" name="Start New Game">
+<status status="PASS" starttime="20150904 16:48:38.817" endtime="20150904 16:48:38.823"></status>
+</kw>
+<kw library="TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20150904 16:48:38.827" endtime="20150904 16:48:38.835"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+<arg>X</arg>
+</arguments>
+<kw library="TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg timestamp="20150904 16:48:38.864" level="INFO">${m} = </msg>
+<status status="PASS" starttime="20150904 16:48:38.852" endtime="20150904 16:48:38.866"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<msg timestamp="20150904 16:48:38.881" level="FAIL"> != X</msg>
+<status status="FAIL" starttime="20150904 16:48:38.870" endtime="20150904 16:48:38.884"></status>
+</kw>
+<status status="FAIL" starttime="20150904 16:48:38.839" endtime="20150904 16:48:38.889"></status>
+</kw>
+<status status="FAIL" starttime="20150904 16:48:38.806" endtime="20150904 16:48:38.894" critical="yes"> != X</status>
+</test>
+<test id="s1-t3" name="Force a Tie">
+<kw library="TicTacToeKeywords" name="Start New Game">
+<status status="PASS" starttime="20150904 16:48:38.909" endtime="20150904 16:48:38.915"></status>
+</kw>
+<kw library="TicTacToeKeywords" name="Mark Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+</arguments>
+<status status="PASS" starttime="20150904 16:48:38.920" endtime="20150904 16:48:38.926"></status>
+</kw>
+<kw name="Check Location">
+<arguments>
+<arg>1</arg>
+<arg>1</arg>
+<arg>X</arg>
+</arguments>
+<kw library="TicTacToeKeywords" name="Get Mark">
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+</arguments>
+<assign>
+<var>${m}</var>
+</assign>
+<msg timestamp="20150904 16:48:38.953" level="INFO">${m} = </msg>
+<status status="PASS" starttime="20150904 16:48:38.941" endtime="20150904 16:48:38.955"></status>
+</kw>
+<kw library="BuiltIn" name="Should Be Equal">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${m}</arg>
+<arg>${mark}</arg>
+</arguments>
+<msg timestamp="20150904 16:48:38.968" level="FAIL"> != X</msg>
+<status status="FAIL" starttime="20150904 16:48:38.958" endtime="20150904 16:48:38.970"></status>
+</kw>
+<status status="FAIL" starttime="20150904 16:48:38.929" endtime="20150904 16:48:38.973"></status>
+</kw>
+<status status="FAIL" starttime="20150904 16:48:38.899" endtime="20150904 16:48:38.977" critical="yes"> != X</status>
+</test>
+<status status="FAIL" starttime="20150904 16:48:37.748" endtime="20150904 16:48:38.984"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3">Critical Tests</stat>
+<stat pass="0" fail="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" id="s1" fail="3" name="TicTacToeTests">TicTacToeTests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
