@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 2.9 (Jython 2.7.0 on java1.7.0_65)" generated="20150904 16:48:37.722">
+<robot generator="Robot 2.9 (Jython 2.7.0 on java1.7.0_65)" generated="20150906 23:30:26.836">
 <suite source="/Users/trentford/Documents/TicTacToe_TNF/acceptance/TicTacToeTests.txt" id="s1" name="TicTacToeTests">
 <test id="s1-t1" name="Win Diagonally as X">
 <kw library="TicTacToeKeywords" name="Start New Game">
-<status status="PASS" starttime="20150904 16:48:38.726" endtime="20150904 16:48:38.733"></status>
+<status status="PASS" starttime="20150906 23:30:27.569" endtime="20150906 23:30:27.575"></status>
 </kw>
 <kw library="TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>1</arg>
 <arg>1</arg>
 </arguments>
-<status status="PASS" starttime="20150904 16:48:38.737" endtime="20150904 16:48:38.745"></status>
+<status status="PASS" starttime="20150906 23:30:27.578" endtime="20150906 23:30:27.584"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -26,8 +26,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg timestamp="20150904 16:48:38.770" level="INFO">${m} = </msg>
-<status status="PASS" starttime="20150904 16:48:38.761" endtime="20150904 16:48:38.772"></status>
+<msg timestamp="20150906 23:30:27.607" level="INFO">${m} = </msg>
+<status status="PASS" starttime="20150906 23:30:27.598" endtime="20150906 23:30:27.609"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -35,23 +35,23 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<msg timestamp="20150904 16:48:38.787" level="FAIL"> != X</msg>
-<status status="FAIL" starttime="20150904 16:48:38.776" endtime="20150904 16:48:38.790"></status>
+<msg timestamp="20150906 23:30:27.623" level="FAIL"> != X</msg>
+<status status="FAIL" starttime="20150906 23:30:27.611" endtime="20150906 23:30:27.627"></status>
 </kw>
-<status status="FAIL" starttime="20150904 16:48:38.749" endtime="20150904 16:48:38.795"></status>
+<status status="FAIL" starttime="20150906 23:30:27.586" endtime="20150906 23:30:27.638"></status>
 </kw>
-<status status="FAIL" starttime="20150904 16:48:38.713" endtime="20150904 16:48:38.799" critical="yes"> != X</status>
+<status status="FAIL" starttime="20150906 23:30:27.560" endtime="20150906 23:30:27.644" critical="yes"> != X</status>
 </test>
 <test id="s1-t2" name="Win Horizontally as O">
 <kw library="TicTacToeKeywords" name="Start New Game">
-<status status="PASS" starttime="20150904 16:48:38.817" endtime="20150904 16:48:38.823"></status>
+<status status="PASS" starttime="20150906 23:30:27.663" endtime="20150906 23:30:27.667"></status>
 </kw>
 <kw library="TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>1</arg>
 <arg>1</arg>
 </arguments>
-<status status="PASS" starttime="20150904 16:48:38.827" endtime="20150904 16:48:38.835"></status>
+<status status="PASS" starttime="20150906 23:30:27.670" endtime="20150906 23:30:27.676"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -67,8 +67,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg timestamp="20150904 16:48:38.864" level="INFO">${m} = </msg>
-<status status="PASS" starttime="20150904 16:48:38.852" endtime="20150904 16:48:38.866"></status>
+<msg timestamp="20150906 23:30:27.704" level="INFO">${m} = </msg>
+<status status="PASS" starttime="20150906 23:30:27.693" endtime="20150906 23:30:27.706"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -76,23 +76,23 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<msg timestamp="20150904 16:48:38.881" level="FAIL"> != X</msg>
-<status status="FAIL" starttime="20150904 16:48:38.870" endtime="20150904 16:48:38.884"></status>
+<msg timestamp="20150906 23:30:27.718" level="FAIL"> != X</msg>
+<status status="FAIL" starttime="20150906 23:30:27.709" endtime="20150906 23:30:27.721"></status>
 </kw>
-<status status="FAIL" starttime="20150904 16:48:38.839" endtime="20150904 16:48:38.889"></status>
+<status status="FAIL" starttime="20150906 23:30:27.678" endtime="20150906 23:30:27.724"></status>
 </kw>
-<status status="FAIL" starttime="20150904 16:48:38.806" endtime="20150904 16:48:38.894" critical="yes"> != X</status>
+<status status="FAIL" starttime="20150906 23:30:27.649" endtime="20150906 23:30:27.728" critical="yes"> != X</status>
 </test>
 <test id="s1-t3" name="Force a Tie">
 <kw library="TicTacToeKeywords" name="Start New Game">
-<status status="PASS" starttime="20150904 16:48:38.909" endtime="20150904 16:48:38.915"></status>
+<status status="PASS" starttime="20150906 23:30:27.745" endtime="20150906 23:30:27.751"></status>
 </kw>
 <kw library="TicTacToeKeywords" name="Mark Location">
 <arguments>
 <arg>1</arg>
 <arg>1</arg>
 </arguments>
-<status status="PASS" starttime="20150904 16:48:38.920" endtime="20150904 16:48:38.926"></status>
+<status status="PASS" starttime="20150906 23:30:27.756" endtime="20150906 23:30:27.762"></status>
 </kw>
 <kw name="Check Location">
 <arguments>
@@ -108,8 +108,8 @@
 <assign>
 <var>${m}</var>
 </assign>
-<msg timestamp="20150904 16:48:38.953" level="INFO">${m} = </msg>
-<status status="PASS" starttime="20150904 16:48:38.941" endtime="20150904 16:48:38.955"></status>
+<msg timestamp="20150906 23:30:27.780" level="INFO">${m} = </msg>
+<status status="PASS" starttime="20150906 23:30:27.772" endtime="20150906 23:30:27.782"></status>
 </kw>
 <kw library="BuiltIn" name="Should Be Equal">
 <doc>Fails if the given objects are unequal.</doc>
@@ -117,14 +117,14 @@
 <arg>${m}</arg>
 <arg>${mark}</arg>
 </arguments>
-<msg timestamp="20150904 16:48:38.968" level="FAIL"> != X</msg>
-<status status="FAIL" starttime="20150904 16:48:38.958" endtime="20150904 16:48:38.970"></status>
+<msg timestamp="20150906 23:30:27.795" level="FAIL"> != X</msg>
+<status status="FAIL" starttime="20150906 23:30:27.784" endtime="20150906 23:30:27.798"></status>
 </kw>
-<status status="FAIL" starttime="20150904 16:48:38.929" endtime="20150904 16:48:38.973"></status>
+<status status="FAIL" starttime="20150906 23:30:27.764" endtime="20150906 23:30:27.804"></status>
 </kw>
-<status status="FAIL" starttime="20150904 16:48:38.899" endtime="20150904 16:48:38.977" critical="yes"> != X</status>
+<status status="FAIL" starttime="20150906 23:30:27.733" endtime="20150906 23:30:27.807" critical="yes"> != X</status>
 </test>
-<status status="FAIL" starttime="20150904 16:48:37.748" endtime="20150904 16:48:38.984"></status>
+<status status="FAIL" starttime="20150906 23:30:26.858" endtime="20150906 23:30:27.814"></status>
 </suite>
 <statistics>
 <total>

@@ -1,56 +1,90 @@
 package edu.jsu.mcis;
 
+
 import org.junit.*;
 import static org.junit.Assert.*;
 
 public class TicTacToeTest {
 	
-	//public t;
-	/*@Before 
-	public void setUp(){
-		TicTacToe t = new TicTacToe;}
-	*/
+
 	@Test
 	public void testInitialBoardIsEmpty() {
-		t = new TicTacToe();
+		TicTacToe t = new TicTacToe();
 		
-		//int[][] t = new int[3][3];
 		for (int row = 0 ; row<3; row++){
 			for (int col = 0; col<3; col++){
 				assertEquals(' ', t.getMark(row,col));
-			}}
-		
-		
-		
+			}
+		}
 	}
-	
-	//@Test
+
+
+	@Test
 	public void testMarkXInUpperRightCorner() {
-		assertTrue(false);
+		TicTacToe t = new TicTacToe();
+		t.setMark(0,2,'X');
+		assertEquals('X', t.getMark(0,2));
 	}
 	
-	//@Test
+	
+	@Test
 	public void testMarkOInBottomLeftCorner() {
-		assertTrue(false);
+		TicTacToe t = new TicTacToe();
+		t.setMark(2,0,'O');
+		assertEquals('O', t.getMark(2,0));	
 	}
 	
-	//@Test
+	
+	@Test
 	public void testUnableToMarkOverExistingMark() {
-		assertTrue(false);
+		TicTacToe t = new TicTacToe();
+		t.setMark(1,1,'O');
+		t.setMark(1,1,'X');
+		assertEquals('O', t.getMark(1,1));
 	}
 	
-	//@Test
+	
+	@Test
 	public void testGameIsNotOverAfterTheFirstMark() {
-		assertTrue(false);
+		TicTacToe t = new TicTacToe();
+		t.setMark(2,2,'X');
+		if(t.isGameOver() == false){
+			assertTrue(true);}
+		else {
+			assertTrue(false);}
 	}
 	
-	//@Test
+	@Test
 	public void testGameIsWonByXHorizontallyAcrossTopRow() {
-		assertTrue(false);
+		TicTacToe t = new TicTacToe();
+		t.setMark(0,0,'X');
+		t.setMark(0,1,'X');
+		t.setMark(0,2,'X');
+		assertEquals('X', t.thisPlayerWon());
 	}
 	
-	//@Test
+	@Test
 	public void testGameIsOverByTieIfAllLocationsAreFilled() {
-		assertTrue(false);
+		TicTacToe t = new TicTacToe();
+		String how = " ";
+		t.setMark(0,0,'X');
+		t.setMark(0,1,'O');
+		t.setMark(0,2,'X');
+		t.setMark(1,0,'O');
+		t.setMark(1,1,'X');
+		t.setMark(1,2,'X');
+		t.setMark(2,0,'O');
+		t.setMark(2,1,'X');
+		t.setMark(2,2,'O');
+
+		if(t.isGameOver() == true){
+			how = t.howGameEnds();
+			if(how == "tie"){
+			assertTrue(true);}
+			else{assertTrue(false);}
+			}
+		else {
+			assertTrue(false);}
+		
 	}	
 }
