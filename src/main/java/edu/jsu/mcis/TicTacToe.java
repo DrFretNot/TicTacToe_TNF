@@ -2,6 +2,7 @@ package edu.jsu.mcis;
 
 import java.io.*;
 
+
 public class TicTacToe {
 
 	private char[][] board = new char[3][3];
