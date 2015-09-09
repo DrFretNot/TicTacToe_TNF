@@ -6,12 +6,14 @@ import java.io.*;
 public class TicTacToe {
 
 	private char[][] board = new char[3][3];
-
+	private int turn;
+	
 	public TicTacToe(){
 		for (int row = 0; row < 3; row++){
 			for (int col = 0; col < 3; col++){
-				board[row][col] = ' ';}}}
-
+				board[row][col] = ' ';}}
+		turn = 0;}
+		
 
 
 	public char getMark(int row, int col){
@@ -21,6 +23,7 @@ public class TicTacToe {
 		char currentMark = ' ';
 		currentMark = getMark(row,col);
 		if(currentMark == ' '){
+			turn++;
 			return board[row][col] = mark;}
 		else {
 			return board[row][col] = currentMark;}
@@ -105,9 +108,20 @@ public class TicTacToe {
 			return "error";}
 	}
 	
-
+	public int turnCount(){
+		return turn;}
 
 	public static void main(String[] args) {
+		System.out.print("Trent got this to run");
+		System.out.println();
+		
+		
+		TicTacToe t = new TicTacToe();
+		
+		
+		System.out.print("center space = '" + t.board[1][1] + "' ");
+		System.out.println();
+		
 		
 	}
 }
