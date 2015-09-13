@@ -14,8 +14,6 @@ public class TicTacToe {
 				board[row][col] = ' ';}}
 		turn = 0;}
 		
-
-
 	public char getMark(int row, int col){
 		return board[row][col];}
 
@@ -82,6 +80,27 @@ public class TicTacToe {
 		else{return ' ';}
 	}
 	
+	public String gameBoardPrintout(){
+
+		String topLeft = String.valueOf(board[0][0]);
+		String topMiddle = String.valueOf(board[0][1]);
+		String topRight = String.valueOf(board[0][2]);
+		String centerLeft = String.valueOf(board[1][0]);
+		String centerMiddle = String.valueOf(board[1][1]);
+		String centerRight = String.valueOf(board[1][2]);
+		String bottomLeft = String.valueOf(board[2][0]);
+		String bottomMiddle = String.valueOf(board[2][1]);;
+		String bottomRight = String.valueOf(board[2][2]);
+	
+		String gameBoardLine1 = "\n   (1)(2)(3)\n";
+		String gameBoardLine2 = "(1)["+topLeft+"]["+topMiddle+"]["+topRight+"]\n";
+		String gameBoardLine3 = "(2)["+centerLeft+"]["+centerMiddle+"]["+centerRight+"]\n";
+		String gameBoardLine4 = "(3)["+bottomLeft+"]["+bottomMiddle+"]["+bottomRight+"]\n";
+	
+		String gameBoardPrintout = gameBoardLine1 + gameBoardLine2 + gameBoardLine3 + gameBoardLine4;
+	
+		return gameBoardPrintout;
+	}
 	
 	public String howGameEnds(){
 		if(isGameOver() == false){
@@ -104,19 +123,37 @@ public class TicTacToe {
 		return turn;}
 
 	public void printBoard(){
-		
-		System.out.println("   (1)(2)(3)");
-		System.out.print("(1)["+board[0][0]+"]"+"["+board[0][1]+"]"+"["+board[0][2]+"]");
-		System.out.println();
-		System.out.print("(2)["+board[1][0]+"]"+"["+board[1][1]+"]"+"["+board[1][2]+"]");
-		System.out.println();
-		System.out.print("(3)["+board[2][0]+"]"+"["+board[2][1]+"]"+"["+board[2][2]+"]");
-		System.out.println();
+		String gameBoard = gameBoardPrintout();
+		System.out.print(gameBoard);
 		}
+		
 	public void printMessage(){
-		System.out.println();
-		System.out.print("Enter the row and column you would like to place your mark");
-		System.out.println();}
+		
+		String enterYourMarkMessage= "\nEnter the row and column you would like to place your mark\n";
+		System.out.println(enterYourMarkMessage);}
+	
+	public char properTurnMark(){
+	char mark = ' ';
+	if (turn == 0 || turn == 2 || turn == 4 || turn == 6 || turn == 8){
+			mark = 'X';}
+		else if (turn == 1 || turn == 3 || turn == 5 || turn == 7){
+			mark = 'O';}
+		else{
+			mark = ' ';}
+	
+	return mark;
+	}
+	
+	public String playerTurnPrintout(){
+		String message = "";
+		if (turn == 0 || turn == 2 || turn == 4 || turn == 6 || turn == 8){
+			message = "Player X, it is your turn.";}
+		else if (turn == 1 || turn == 3 || turn == 5 || turn == 7){
+			message = "Player O, it is your turn.";}
+		else{
+			message = "There was an error.";}
+		return message;
+	}
 	
 	public void getInput(){
 		int col;
@@ -127,12 +164,9 @@ public class TicTacToe {
       	Scanner input = new Scanner(System.in);
       	System.out.println();
       	System.out.println();
-      	if (turn == 0 || turn == 2 || turn == 4 || turn == 6 || turn == 8){
-			System.out.println("Player X, it is your turn.");}
-		else if (turn == 1 || turn == 3 || turn == 5 || turn == 7){
-			System.out.println("Player O, it is your turn.");}
-		else{
-			System.out.println("There was an error.");}
+      
+		String playerTurnMessage = playerTurnPrintout();
+		System.out.println(playerTurnMessage);
 
       	do{
       		 printMessage();
@@ -160,14 +194,8 @@ public class TicTacToe {
   		  		choice = false;}
     	}while (choice == false);
     	
-    	
-    	
-		if (turn == 0 || turn == 2 || turn == 4 || turn == 6 || turn == 8){
-			mark = 'X';}
-		else if (turn == 1 || turn == 3 || turn == 5 || turn == 7){
-			mark = 'O';}
-		else{
-			mark = ' ';}
+		mark = properTurnMark();
+		
 		setMark(row,col,mark);
 		printBoard();
 		
@@ -177,8 +205,8 @@ public class TicTacToe {
 	public static void main(String[] args) {
 		
 		TicTacToe t = new TicTacToe();
-		
-		
+		String currentBoard = t.gameBoardPrintout();
+		//System.out.println(currentBoard);
 		t.printBoard();
 		
 		boolean gameOverCondition = t.isGameOver();

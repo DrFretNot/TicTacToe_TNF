@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.jsu.mcis.TicTacToeTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2015-09-10T02:00:12" hostname="Trents-MacBook-Air.local" time="0.024">
+<testsuite name="edu.jsu.mcis.TicTacToeTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2015-09-13T04:02:26" hostname="Trents-MacBook-Air.local" time="0.036">
   <properties/>
-  <testcase name="testGameIsOverByTieIfAllLocationsAreFilled" classname="edu.jsu.mcis.TicTacToeTest" time="0.021"/>
+  <testcase name="testThatTheGameCanDecideWhoseTurnItIsBasedOnTurn" classname="edu.jsu.mcis.TicTacToeTest" time="0.031"/>
+  <testcase name="testGameIsOverByTieIfAllLocationsAreFilled" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testGameIsWonByXHorizontallyAcrossTopRow" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testGameIsCountingTurnsWhenMarkIsMade" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
+  <testcase name="testThatGameBoardIsPrintingCorrectlyAfterEachTurn" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
+  <testcase name="testThatGameBoardIsPrintingCorrectlyWhenBlank" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testMarkXInUpperRightCorner" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testMarkOInBottomLeftCorner" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
+  <testcase name="testGameIsWonByODiagonallyFromBottomLeftToTopRight" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
+  <testcase name="testThatThePlayerTurnPrintoutMessageIsSwitchingAppropriately" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testInitialBoardIsEmpty" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testGameIsNotOverAfterTheFirstMark" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testUnableToMarkOverExistingMark" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>

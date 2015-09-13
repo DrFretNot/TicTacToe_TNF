@@ -14,187 +14,215 @@ public class TicTacToe {
 <span class="fc" id="L14">				board[row][col] = ' ';}}</span>
 <span class="fc" id="L15">		turn = 0;}</span>
 		
-
-
 	public char getMark(int row, int col){
-<span class="fc" id="L20">		return board[row][col];}</span>
+<span class="fc" id="L18">		return board[row][col];}</span>
 
 	public char setMark(int row, int col, char mark){
-<span class="fc" id="L23">		char currentMark = ' ';</span>
-<span class="fc" id="L24">		currentMark = getMark(row,col);</span>
-<span class="fc bfc" id="L25" title="All 2 branches covered.">		if(currentMark == ' '){</span>
-<span class="fc" id="L26">			turn++;</span>
-<span class="fc" id="L27">			return board[row][col] = mark;}</span>
+<span class="fc" id="L21">		char currentMark = ' ';</span>
+<span class="fc" id="L22">		currentMark = getMark(row,col);</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">		if(currentMark == ' '){</span>
+<span class="fc" id="L24">			turn++;</span>
+<span class="fc" id="L25">			return board[row][col] = mark;}</span>
 		else {
-<span class="fc" id="L29">			return board[row][col] = currentMark;}</span>
+<span class="fc" id="L27">			return board[row][col] = currentMark;}</span>
 		}
 
 	public boolean isGameOver(){
-<span class="fc" id="L33">		int turn = 0;</span>
-<span class="fc bfc" id="L34" title="All 2 branches covered.">		for (int row = 0; row &lt; 3; row++){</span>
-<span class="fc bfc" id="L35" title="All 2 branches covered.">			for (int col = 0; col &lt; 3; col++){</span>
-<span class="fc bfc" id="L36" title="All 2 branches covered.">				if(board[row][col] == ' '){</span>
-<span class="fc" id="L37">					turn = turn;</span>
+<span class="fc" id="L31">		int turn = 0;</span>
+<span class="fc bfc" id="L32" title="All 2 branches covered.">		for (int row = 0; row &lt; 3; row++){</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">			for (int col = 0; col &lt; 3; col++){</span>
+<span class="fc bfc" id="L34" title="All 2 branches covered.">				if(board[row][col] == ' '){</span>
+<span class="fc" id="L35">					turn = turn;</span>
 				}
 				else{
-<span class="fc" id="L40">				turn++;	</span>
+<span class="fc" id="L38">				turn++;	</span>
 				}
 			}
 		}
-<span class="pc bpc" id="L44" title="2 of 4 branches missed.">		if (thisPlayerWon() == 'X' || thisPlayerWon() == 'O'){</span>
-<span class="nc" id="L45">			return true;}</span>
+<span class="pc bpc" id="L42" title="2 of 4 branches missed.">		if (thisPlayerWon() == 'X' || thisPlayerWon() == 'O'){</span>
+<span class="nc" id="L43">			return true;}</span>
 		else{
-<span class="fc bfc" id="L47" title="All 2 branches covered.">			if (turn == 9){</span>
-<span class="fc" id="L48">				return true;}</span>
-<span class="pc bpc" id="L49" title="1 of 2 branches missed.">			else if (turn &lt;= 8){</span>
-<span class="fc" id="L50">				return false;}</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">			if (turn == 9){</span>
+<span class="fc" id="L46">				return true;}</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">			else if (turn &lt;= 8){</span>
+<span class="fc" id="L48">				return false;}</span>
 			else{
 				
-<span class="nc" id="L53">			return true;}</span>
+<span class="nc" id="L51">			return true;}</span>
 		}
 	}
 	
 	public char thisPlayerWon(){
-<span class="pc bpc" id="L58" title="1 of 6 branches missed.">		if (board[0][0] == board[0][1] &amp;&amp; board[0][0] == board[0][2] &amp;&amp; board[0][0] != ' '){</span>
-<span class="fc" id="L59">			return board[0][0];}</span>
+<span class="fc bfc" id="L56" title="All 6 branches covered.">		if (board[0][0] == board[0][1] &amp;&amp; board[0][0] == board[0][2] &amp;&amp; board[0][0] != ' '){</span>
+<span class="fc" id="L57">			return board[0][0];}</span>
 		
-<span class="pc bpc" id="L61" title="2 of 6 branches missed.">		else if (board[1][0] == board[1][1] &amp;&amp; board[1][0] == board[1][2] &amp;&amp; board[1][0] != ' '){</span>
-<span class="nc" id="L62">			return board[1][0];}</span>
+<span class="pc bpc" id="L59" title="2 of 6 branches missed.">		else if (board[1][0] == board[1][1] &amp;&amp; board[1][0] == board[1][2] &amp;&amp; board[1][0] != ' '){</span>
+<span class="nc" id="L60">			return board[1][0];}</span>
 		
-<span class="pc bpc" id="L64" title="3 of 6 branches missed.">		else if (board[2][0] == board[2][1] &amp;&amp; board[2][0] == board[2][2] &amp;&amp; board[2][0] != ' '){</span>
-<span class="nc" id="L65">			return board[2][0];}</span>
+<span class="pc bpc" id="L62" title="3 of 6 branches missed.">		else if (board[2][0] == board[2][1] &amp;&amp; board[2][0] == board[2][2] &amp;&amp; board[2][0] != ' '){</span>
+<span class="nc" id="L63">			return board[2][0];}</span>
 		
-<span class="pc bpc" id="L67" title="2 of 6 branches missed.">		else if (board[0][0] == board[1][0] &amp;&amp; board[0][0] == board[2][0] &amp;&amp; board[0][0] != ' '){</span>
-<span class="nc" id="L68">			return board[0][0];}</span>
+<span class="pc bpc" id="L65" title="1 of 6 branches missed.">		else if (board[0][0] == board[1][0] &amp;&amp; board[0][0] == board[2][0] &amp;&amp; board[0][0] != ' '){</span>
+<span class="nc" id="L66">			return board[0][0];}</span>
 		
-<span class="pc bpc" id="L70" title="2 of 6 branches missed.">		else if (board[0][1] == board[1][1] &amp;&amp; board[0][1] == board[2][1] &amp;&amp; board[0][1] != ' '){</span>
-<span class="nc" id="L71">			return board[0][1];}</span>
+<span class="pc bpc" id="L68" title="2 of 6 branches missed.">		else if (board[0][1] == board[1][1] &amp;&amp; board[0][1] == board[2][1] &amp;&amp; board[0][1] != ' '){</span>
+<span class="nc" id="L69">			return board[0][1];}</span>
 		
-<span class="pc bpc" id="L73" title="4 of 6 branches missed.">		else if (board[0][2] == board[1][2] &amp;&amp; board[0][2] == board[2][2] &amp;&amp; board[0][2] != ' '){</span>
-<span class="nc" id="L74">			return board[0][2];}</span>
+<span class="pc bpc" id="L71" title="3 of 6 branches missed.">		else if (board[0][2] == board[1][2] &amp;&amp; board[0][2] == board[2][2] &amp;&amp; board[0][2] != ' '){</span>
+<span class="nc" id="L72">			return board[0][2];}</span>
 		
-<span class="pc bpc" id="L76" title="4 of 6 branches missed.">		else if (board[0][0] == board[1][1] &amp;&amp; board[0][0] == board[2][2] &amp;&amp; board[0][0] != ' '){</span>
-<span class="nc" id="L77">			return board[0][0];}	</span>
+<span class="pc bpc" id="L74" title="3 of 6 branches missed.">		else if (board[0][0] == board[1][1] &amp;&amp; board[0][0] == board[2][2] &amp;&amp; board[0][0] != ' '){</span>
+<span class="nc" id="L75">			return board[0][0];}	</span>
 		
-<span class="pc bpc" id="L79" title="2 of 6 branches missed.">		else if (board[0][2] == board[1][1] &amp;&amp; board[0][2] == board[2][0] &amp;&amp; board[0][2] != ' '){</span>
-<span class="nc" id="L80">			return board[0][2];}</span>
+<span class="pc bpc" id="L77" title="1 of 6 branches missed.">		else if (board[0][2] == board[1][1] &amp;&amp; board[0][2] == board[2][0] &amp;&amp; board[0][2] != ' '){</span>
+<span class="fc" id="L78">			return board[0][2];}</span>
 		
-<span class="fc" id="L82">		else{return ' ';}</span>
+<span class="fc" id="L80">		else{return ' ';}</span>
 	}
 	
+	public String gameBoardPrintout(){
+
+<span class="fc" id="L85">		String topLeft = String.valueOf(board[0][0]);</span>
+<span class="fc" id="L86">		String topMiddle = String.valueOf(board[0][1]);</span>
+<span class="fc" id="L87">		String topRight = String.valueOf(board[0][2]);</span>
+<span class="fc" id="L88">		String centerLeft = String.valueOf(board[1][0]);</span>
+<span class="fc" id="L89">		String centerMiddle = String.valueOf(board[1][1]);</span>
+<span class="fc" id="L90">		String centerRight = String.valueOf(board[1][2]);</span>
+<span class="fc" id="L91">		String bottomLeft = String.valueOf(board[2][0]);</span>
+<span class="fc" id="L92">		String bottomMiddle = String.valueOf(board[2][1]);;</span>
+<span class="fc" id="L93">		String bottomRight = String.valueOf(board[2][2]);</span>
+	
+<span class="fc" id="L95">		String gameBoardLine1 = &quot;\n   (1)(2)(3)\n&quot;;</span>
+<span class="fc" id="L96">		String gameBoardLine2 = &quot;(1)[&quot;+topLeft+&quot;][&quot;+topMiddle+&quot;][&quot;+topRight+&quot;]\n&quot;;</span>
+<span class="fc" id="L97">		String gameBoardLine3 = &quot;(2)[&quot;+centerLeft+&quot;][&quot;+centerMiddle+&quot;][&quot;+centerRight+&quot;]\n&quot;;</span>
+<span class="fc" id="L98">		String gameBoardLine4 = &quot;(3)[&quot;+bottomLeft+&quot;][&quot;+bottomMiddle+&quot;][&quot;+bottomRight+&quot;]\n&quot;;</span>
+	
+<span class="fc" id="L100">		String gameBoardPrintout = gameBoardLine1 + gameBoardLine2 + gameBoardLine3 + gameBoardLine4;</span>
+	
+<span class="fc" id="L102">		return gameBoardPrintout;</span>
+	}
 	
 	public String howGameEnds(){
-<span class="pc bpc" id="L87" title="1 of 2 branches missed.">		if(isGameOver() == false){</span>
-<span class="nc" id="L88">			return &quot;game not over&quot;;}</span>
+<span class="pc bpc" id="L106" title="1 of 2 branches missed.">		if(isGameOver() == false){</span>
+<span class="nc" id="L107">			return &quot;game not over&quot;;}</span>
 		
-<span class="pc bpc" id="L90" title="1 of 2 branches missed.">		else if(thisPlayerWon() == 'X'){</span>
-<span class="nc" id="L91">			return &quot;X wins&quot;;}</span>
+<span class="pc bpc" id="L109" title="1 of 2 branches missed.">		else if(thisPlayerWon() == 'X'){</span>
+<span class="nc" id="L110">			return &quot;X wins&quot;;}</span>
 	
-<span class="pc bpc" id="L93" title="1 of 2 branches missed.">		else if(thisPlayerWon() == 'O'){</span>
-<span class="nc" id="L94">			return &quot;O wins&quot;;}</span>
+<span class="pc bpc" id="L112" title="1 of 2 branches missed.">		else if(thisPlayerWon() == 'O'){</span>
+<span class="nc" id="L113">			return &quot;O wins&quot;;}</span>
 	
-<span class="pc bpc" id="L96" title="1 of 2 branches missed.">		else if(isGameOver() == true){</span>
-<span class="fc" id="L97">			return &quot;tie&quot;;}</span>
+<span class="pc bpc" id="L115" title="1 of 2 branches missed.">		else if(isGameOver() == true){</span>
+<span class="fc" id="L116">			return &quot;tie&quot;;}</span>
 		
 		else{
-<span class="nc" id="L100">			return &quot;error&quot;;}</span>
+<span class="nc" id="L119">			return &quot;error&quot;;}</span>
 	}
 	
 	public int turnCount(){
-<span class="fc" id="L104">		return turn;}</span>
+<span class="fc" id="L123">		return turn;}</span>
 
 	public void printBoard(){
+<span class="nc" id="L126">		String gameBoard = gameBoardPrintout();</span>
+<span class="nc" id="L127">		System.out.print(gameBoard);</span>
+<span class="nc" id="L128">		}</span>
 		
-<span class="nc" id="L108">		System.out.println(&quot;   (1)(2)(3)&quot;);</span>
-<span class="nc" id="L109">		System.out.print(&quot;(1)[&quot;+board[0][0]+&quot;]&quot;+&quot;[&quot;+board[0][1]+&quot;]&quot;+&quot;[&quot;+board[0][2]+&quot;]&quot;);</span>
-<span class="nc" id="L110">		System.out.println();</span>
-<span class="nc" id="L111">		System.out.print(&quot;(2)[&quot;+board[1][0]+&quot;]&quot;+&quot;[&quot;+board[1][1]+&quot;]&quot;+&quot;[&quot;+board[1][2]+&quot;]&quot;);</span>
-<span class="nc" id="L112">		System.out.println();</span>
-<span class="nc" id="L113">		System.out.print(&quot;(3)[&quot;+board[2][0]+&quot;]&quot;+&quot;[&quot;+board[2][1]+&quot;]&quot;+&quot;[&quot;+board[2][2]+&quot;]&quot;);</span>
-<span class="nc" id="L114">		System.out.println();</span>
-<span class="nc" id="L115">		}</span>
 	public void printMessage(){
-<span class="nc" id="L117">		System.out.println();</span>
-<span class="nc" id="L118">		System.out.print(&quot;Enter the row and column you would like to place your mark&quot;);</span>
-<span class="nc" id="L119">		System.out.println();}</span>
+		
+<span class="nc" id="L132">		String enterYourMarkMessage= &quot;\nEnter the row and column you would like to place your mark\n&quot;;</span>
+<span class="nc" id="L133">		System.out.println(enterYourMarkMessage);}</span>
+	
+	public char properTurnMark(){
+<span class="fc" id="L136">	char mark = ' ';</span>
+<span class="fc bfc" id="L137" title="All 10 branches covered.">	if (turn == 0 || turn == 2 || turn == 4 || turn == 6 || turn == 8){</span>
+<span class="fc" id="L138">			mark = 'X';}</span>
+<span class="fc bfc" id="L139" title="All 8 branches covered.">		else if (turn == 1 || turn == 3 || turn == 5 || turn == 7){</span>
+<span class="fc" id="L140">			mark = 'O';}</span>
+		else{
+<span class="fc" id="L142">			mark = ' ';}</span>
+	
+<span class="fc" id="L144">	return mark;</span>
+	}
+	
+	public String playerTurnPrintout(){
+<span class="fc" id="L148">		String message = &quot;&quot;;</span>
+<span class="fc bfc" id="L149" title="All 10 branches covered.">		if (turn == 0 || turn == 2 || turn == 4 || turn == 6 || turn == 8){</span>
+<span class="fc" id="L150">			message = &quot;Player X, it is your turn.&quot;;}</span>
+<span class="pc bpc" id="L151" title="1 of 8 branches missed.">		else if (turn == 1 || turn == 3 || turn == 5 || turn == 7){</span>
+<span class="fc" id="L152">			message = &quot;Player O, it is your turn.&quot;;}</span>
+		else{
+<span class="nc" id="L154">			message = &quot;There was an error.&quot;;}</span>
+<span class="fc" id="L155">		return message;</span>
+	}
 	
 	public void getInput(){
 		int col;
       	int row;
       	char mark;
-<span class="nc" id="L125">      	boolean choice = false;</span>
+<span class="nc" id="L162">      	boolean choice = false;</span>
       	int answer;
-<span class="nc" id="L127">      	Scanner input = new Scanner(System.in);</span>
-<span class="nc" id="L128">      	System.out.println();</span>
-<span class="nc" id="L129">      	System.out.println();</span>
-<span class="nc bnc" id="L130" title="All 10 branches missed.">      	if (turn == 0 || turn == 2 || turn == 4 || turn == 6 || turn == 8){</span>
-<span class="nc" id="L131">			System.out.println(&quot;Player X, it is your turn.&quot;);}</span>
-<span class="nc bnc" id="L132" title="All 8 branches missed.">		else if (turn == 1 || turn == 3 || turn == 5 || turn == 7){</span>
-<span class="nc" id="L133">			System.out.println(&quot;Player O, it is your turn.&quot;);}</span>
-		else{
-<span class="nc" id="L135">			System.out.println(&quot;There was an error.&quot;);}</span>
+<span class="nc" id="L164">      	Scanner input = new Scanner(System.in);</span>
+<span class="nc" id="L165">      	System.out.println();</span>
+<span class="nc" id="L166">      	System.out.println();</span>
+      
+<span class="nc" id="L168">		String playerTurnMessage = playerTurnPrintout();</span>
+<span class="nc" id="L169">		System.out.println(playerTurnMessage);</span>
 
       	do{
-<span class="nc" id="L138">      		 printMessage();</span>
-<span class="nc" id="L139">      		 System.out.println(&quot;Enter an integer (1-3) for the row:   &quot;);</span>
-<span class="nc" id="L140">			row = input.nextInt();</span>
-<span class="nc" id="L141">			System.out.println(&quot;Enter an integer (1-3) for the column:   &quot;);</span>
-<span class="nc" id="L142">			col = input.nextInt();</span>
-<span class="nc" id="L143">			System.out.println(&quot;You entered (&quot;+ row +&quot;,&quot;+col+&quot;)&quot;);</span>
-<span class="nc" id="L144">			System.out.println(&quot;Is this correct? 1-Yes 2-No:    &quot;);</span>
-<span class="nc" id="L145">	    	answer = input.nextInt();</span>
+<span class="nc" id="L172">      		 printMessage();</span>
+<span class="nc" id="L173">      		 System.out.println(&quot;Enter an integer (1-3) for the row:   &quot;);</span>
+<span class="nc" id="L174">			row = input.nextInt();</span>
+<span class="nc" id="L175">			System.out.println(&quot;Enter an integer (1-3) for the column:   &quot;);</span>
+<span class="nc" id="L176">			col = input.nextInt();</span>
+<span class="nc" id="L177">			System.out.println(&quot;You entered (&quot;+ row +&quot;,&quot;+col+&quot;)&quot;);</span>
+<span class="nc" id="L178">			System.out.println(&quot;Is this correct? 1-Yes 2-No:    &quot;);</span>
+<span class="nc" id="L179">	    	answer = input.nextInt();</span>
     		
-<span class="nc bnc" id="L147" title="All 2 branches missed.">    		if(answer == 1 ){</span>
+<span class="nc bnc" id="L181" title="All 2 branches missed.">    		if(answer == 1 ){</span>
     			
-<span class="nc" id="L149">    			col = col-1;</span>
-<span class="nc" id="L150">    			row = row-1;</span>
-<span class="nc bnc" id="L151" title="All 2 branches missed.">    			if (getMark(row,col) != ' '){</span>
-<span class="nc" id="L152">    				System.out.println(&quot;That Space is Taken.&quot;);</span>
-<span class="nc" id="L153">    				choice = false;}</span>
+<span class="nc" id="L183">    			col = col-1;</span>
+<span class="nc" id="L184">    			row = row-1;</span>
+<span class="nc bnc" id="L185" title="All 2 branches missed.">    			if (getMark(row,col) != ' '){</span>
+<span class="nc" id="L186">    				System.out.println(&quot;That Space is Taken.&quot;);</span>
+<span class="nc" id="L187">    				choice = false;}</span>
     			else{
-<span class="nc" id="L155">    			choice = true;}</span>
+<span class="nc" id="L189">    			choice = true;}</span>
     				
     			}
   		  	else{
-<span class="nc" id="L159">  		  		System.out.println(&quot;Please try again.&quot;);</span>
-<span class="nc" id="L160">  		  		choice = false;}</span>
-<span class="nc bnc" id="L161" title="All 2 branches missed.">    	}while (choice == false);</span>
+<span class="nc" id="L193">  		  		System.out.println(&quot;Please try again.&quot;);</span>
+<span class="nc" id="L194">  		  		choice = false;}</span>
+<span class="nc bnc" id="L195" title="All 2 branches missed.">    	}while (choice == false);</span>
     	
-    	
-    	
-<span class="nc bnc" id="L165" title="All 10 branches missed.">		if (turn == 0 || turn == 2 || turn == 4 || turn == 6 || turn == 8){</span>
-<span class="nc" id="L166">			mark = 'X';}</span>
-<span class="nc bnc" id="L167" title="All 8 branches missed.">		else if (turn == 1 || turn == 3 || turn == 5 || turn == 7){</span>
-<span class="nc" id="L168">			mark = 'O';}</span>
-		else{
-<span class="nc" id="L170">			mark = ' ';}</span>
-<span class="nc" id="L171">		setMark(row,col,mark);</span>
-<span class="nc" id="L172">		printBoard();</span>
+<span class="nc" id="L197">		mark = properTurnMark();</span>
 		
-<span class="nc" id="L174">		}</span>
+<span class="nc" id="L199">		setMark(row,col,mark);</span>
+<span class="nc" id="L200">		printBoard();</span>
+		
+<span class="nc" id="L202">		}</span>
 
 
 	public static void main(String[] args) {
 		
-<span class="nc" id="L179">		TicTacToe t = new TicTacToe();</span>
+<span class="nc" id="L207">		TicTacToe t = new TicTacToe();</span>
+<span class="nc" id="L208">		String currentBoard = t.gameBoardPrintout();</span>
+		//System.out.println(currentBoard);
+<span class="nc" id="L210">		t.printBoard();</span>
 		
-		
-<span class="nc" id="L182">		t.printBoard();</span>
-		
-<span class="nc" id="L184">		boolean gameOverCondition = t.isGameOver();</span>
+<span class="nc" id="L212">		boolean gameOverCondition = t.isGameOver();</span>
 		
 		do{
-<span class="nc" id="L187">		t.getInput();</span>
-<span class="nc" id="L188">		gameOverCondition = t.isGameOver();</span>
-<span class="nc bnc" id="L189" title="All 2 branches missed.">		} while(gameOverCondition== false);</span>
+<span class="nc" id="L215">		t.getInput();</span>
+<span class="nc" id="L216">		gameOverCondition = t.isGameOver();</span>
+<span class="nc bnc" id="L217" title="All 2 branches missed.">		} while(gameOverCondition== false);</span>
 		
-<span class="nc" id="L191">		String outcome = t.howGameEnds();</span>
-<span class="nc" id="L192">		System.out.println(&quot;Game Over&quot;);</span>
-<span class="nc" id="L193">      	System.out.println(&quot;Result: &quot;+outcome);</span>
+<span class="nc" id="L219">		String outcome = t.howGameEnds();</span>
+<span class="nc" id="L220">		System.out.println(&quot;Game Over&quot;);</span>
+<span class="nc" id="L221">      	System.out.println(&quot;Result: &quot;+outcome);</span>
  
 		
 		
 		
-<span class="nc" id="L198">	}</span>
+<span class="nc" id="L226">	}</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.1.201405082137</span></div></body></html>
