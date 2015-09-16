@@ -122,10 +122,7 @@ public class TicTacToe {
 	public int turnCount(){
 		return turn;}
 
-	public void printBoard(){
-		String gameBoard = gameBoardPrintout();
-		System.out.print(gameBoard);
-		}
+
 		
 	public void printMessage(){
 		
@@ -197,7 +194,8 @@ public class TicTacToe {
 		mark = properTurnMark();
 		
 		setMark(row,col,mark);
-		printBoard();
+		String gameBoard = gameBoardPrintout();
+		System.out.print(gameBoard);
 		
 		}
 
@@ -206,8 +204,8 @@ public class TicTacToe {
 		
 		TicTacToe t = new TicTacToe();
 		String currentBoard = t.gameBoardPrintout();
-		//System.out.println(currentBoard);
-		t.printBoard();
+		//System.out.println(currentBoard);String gameBoard = gameBoardPrintout();
+		System.out.print(currentBoard);
 		
 		boolean gameOverCondition = t.isGameOver();
 		
