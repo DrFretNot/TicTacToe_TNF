@@ -97,59 +97,25 @@ public class TicTacToeTest {
 	@Test
 	public void testGameIsCountingTurnsWhenMarkIsMade(){
 		TicTacToe t = new TicTacToe();
-		int turn = t.turnCount();
-		if(turn == 0){
-			t.setMark(0,0,'X');
-			turn = t.turnCount();
-			if(turn == 1){
-				t.setMark(0,1,'O');
-				turn = t.turnCount();
-				if(turn == 2){
-					t.setMark(0,2,'X');
-					turn = t.turnCount();
-					if(turn == 3){
-						t.setMark(1,0,'O');
-						turn = t.turnCount();
-						if(turn == 4){
-							t.setMark(1,1,'X');
-							turn = t.turnCount();
-							if(turn == 5){
-								t.setMark(1,2,'X');
-								turn = t.turnCount();
-								if(turn == 6){
-									t.setMark(2,0,'O');
-									turn = t.turnCount();
-									if(turn == 7){
-										t.setMark(2,1,'X');
-										turn = t.turnCount();
-										if(turn == 8){
-											t.setMark(2,2,'O');
-											turn = t.turnCount();
-											
-											if(turn == 9){
-												assertTrue(true);}
-											else{assertTrue(false);}
-										}
-										else{assertTrue(false);}
-									}
-									else{assertTrue(false);}
-								}
-								else{assertTrue(false);}
-							}
-							else{assertTrue(false);}
-						}
-						else{assertTrue(false);}
-					}
-					else{assertTrue(false);}
+		char[] correctMark = {'X','O','X','O','X','X','O','X','O'};
+		//boolean markX = true;
+		for(int i = 0; i < 3; i++) {
+			for(int j = 0; j < 3; j++) {
+				int turn = t.turnCount();
+				int correctTurn = 3 * i + j;
+				if(turn == correctTurn) {
+					char mark = correctMark[correctTurn];
+					t.setMark(i, j, mark);
+					//markX = !markX;
 				}
-				else{assertTrue(false);}
+				else {
+					assertTrue(false);
+				}
 			}
-			else{assertTrue(false);}
+			assertTrue(true);
 		}
-		else{assertTrue(false);}
-	
-	
-
+		
+		
 	
 	
 		
@@ -165,60 +131,28 @@ public class TicTacToeTest {
 	
 	@Test
 	public void testThatGameBoardIsPrintingCorrectlyAfterEachTurn(){
+		
+		
 		TicTacToe t = new TicTacToe();
-
 		String gameBoard = t.gameBoardPrintout();
 		
-		if(gameBoard.equals("\n   (1)(2)(3)\n(1)[ ][ ][ ]\n(2)[ ][ ][ ]\n(3)[ ][ ][ ]\n")){
-			t.setMark(0,0,'X');
-			gameBoard = t.gameBoardPrintout();
-			if(gameBoard.equals("\n   (1)(2)(3)\n(1)[X][ ][ ]\n(2)[ ][ ][ ]\n(3)[ ][ ][ ]\n")){
-				t.setMark(0,1,'O');
-				gameBoard = t.gameBoardPrintout();
-				if(gameBoard.equals("\n   (1)(2)(3)\n(1)[X][O][ ]\n(2)[ ][ ][ ]\n(3)[ ][ ][ ]\n")){
-					t.setMark(0,2,'X');
-					gameBoard = t.gameBoardPrintout();
-					if(gameBoard.equals("\n   (1)(2)(3)\n(1)[X][O][X]\n(2)[ ][ ][ ]\n(3)[ ][ ][ ]\n")){
-						t.setMark(1,0,'O');
-						gameBoard = t.gameBoardPrintout();
-						if(gameBoard.equals("\n   (1)(2)(3)\n(1)[X][O][X]\n(2)[O][ ][ ]\n(3)[ ][ ][ ]\n")){
-							t.setMark(1,1,'X');
-							gameBoard = t.gameBoardPrintout();
-							if(gameBoard.equals("\n   (1)(2)(3)\n(1)[X][O][X]\n(2)[O][X][ ]\n(3)[ ][ ][ ]\n")){
-								t.setMark(1,2,'X');
-								gameBoard = t.gameBoardPrintout();
-								if(gameBoard.equals("\n   (1)(2)(3)\n(1)[X][O][X]\n(2)[O][X][X]\n(3)[ ][ ][ ]\n")){
-									t.setMark(2,0,'O');
-									gameBoard = t.gameBoardPrintout();
-									if(gameBoard.equals("\n   (1)(2)(3)\n(1)[X][O][X]\n(2)[O][X][X]\n(3)[O][ ][ ]\n")){
-										t.setMark(2,1,'X');
-										gameBoard = t.gameBoardPrintout();
-										if(gameBoard.equals("\n   (1)(2)(3)\n(1)[X][O][X]\n(2)[O][X][X]\n(3)[O][X][ ]\n")){
-											t.setMark(2,2,'O');
-											gameBoard = t.gameBoardPrintout();
-
-											if(gameBoard.equals("\n   (1)(2)(3)\n(1)[X][O][X]\n(2)[O][X][X]\n(3)[O][X][O]\n")){
-												assertTrue(true);}
-											else{assertTrue(false);}
-										}
-										else{assertTrue(false);}
-									}
-									else{assertTrue(false);}
-								}
-								else{assertTrue(false);}
-							}
-							else{assertTrue(false);}
-						}
-						else{assertTrue(false);}
-					}
-					else{assertTrue(false);}
-				}
-				else{assertTrue(false);}
-			}
-			else{assertTrue(false);}
-		}
+		
+		t.setMark(0,0,'X');
+		t.setMark(0,1,'O');
+		t.setMark(0,2,'X');
+		t.setMark(1,0,'O');
+		t.setMark(1,1,'X');
+		t.setMark(1,2,'X');
+		t.setMark(2,0,'O');
+		t.setMark(2,1,'X');
+		t.setMark(2,2,'O');
+		
+		
+		gameBoard = t.gameBoardPrintout();
+		if(gameBoard.equals("\n   (1)(2)(3)\n(1)[X][O][X]\n(2)[O][X][X]\n(3)[O][X][O]\n")){
+			assertTrue(true);}
 		else{assertTrue(false);}
-
+		
 	}
 	
 	@Test

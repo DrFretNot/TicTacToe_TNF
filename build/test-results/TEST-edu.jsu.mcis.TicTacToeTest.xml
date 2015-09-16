@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="edu.jsu.mcis.TicTacToeTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2015-09-13T04:02:26" hostname="Trents-MacBook-Air.local" time="0.036">
+<testsuite name="edu.jsu.mcis.TicTacToeTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2015-09-16T22:25:12" hostname="Trents-MacBook-Air.local" time="0.02">
   <properties/>
-  <testcase name="testThatTheGameCanDecideWhoseTurnItIsBasedOnTurn" classname="edu.jsu.mcis.TicTacToeTest" time="0.031"/>
-  <testcase name="testGameIsOverByTieIfAllLocationsAreFilled" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
+  <testcase name="testThatTheGameCanDecideWhoseTurnItIsBasedOnTurn" classname="edu.jsu.mcis.TicTacToeTest" time="0.014"/>
+  <testcase name="testGameIsOverByTieIfAllLocationsAreFilled" classname="edu.jsu.mcis.TicTacToeTest" time="0.001"/>
   <testcase name="testGameIsWonByXHorizontallyAcrossTopRow" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testGameIsCountingTurnsWhenMarkIsMade" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
   <testcase name="testThatGameBoardIsPrintingCorrectlyAfterEachTurn" classname="edu.jsu.mcis.TicTacToeTest" time="0.0"/>
