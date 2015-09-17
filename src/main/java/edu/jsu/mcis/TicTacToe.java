@@ -2,8 +2,16 @@ package edu.jsu.mcis;
 
 import java.io.*;
 import java.util.Scanner;
+import javax.swing.JFrame;
+import javax.swing.*;
+import java.awt.event.*;
+import java.awt.*;
 
 public class TicTacToe {
+
+
+
+
 
 	private char[][] board = new char[3][3];
 	private int turn;
@@ -19,6 +27,17 @@ public class TicTacToe {
 
 	public char setMark(int row, int col, char mark){
 		char currentMark = ' ';
+		currentMark = getMark(row,col);
+		if(currentMark == ' '){
+			turn++;
+			return board[row][col] = mark;}
+		else {
+			return board[row][col] = currentMark;}
+		}
+		
+	public char setMark2(int row, int col){
+		char currentMark = ' ';
+		char mark = properTurnMark();
 		currentMark = getMark(row,col);
 		if(currentMark == ' '){
 			turn++;
@@ -121,8 +140,6 @@ public class TicTacToe {
 	
 	public int turnCount(){
 		return turn;}
-
-
 		
 	public void printMessage(){
 		
@@ -198,18 +215,47 @@ public class TicTacToe {
 		System.out.print(gameBoard);
 		
 		}
-
-
-	public static void main(String[] args) {
 		
-		TicTacToe t = new TicTacToe();
-		String currentBoard = t.gameBoardPrintout();
+	public void GUIboard(){
+		//JFrame TicTacToe = new TicTacToeFrame();
+        
+
+        /*myBoard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //myBoard.setSize(500, 500);
+        
+        
+        
+        
+        TicTacToePanel panel = new TicTacToePanel();
+        
+        //add panel to the frame
+        myBoard.add(panel);
+        
+        //pack the frame (this sets the frame size according to your panel
+        myBoard.pack();
+        
+        //make the frame visible
+       // frame.setVisible(true);
+        myBoard.setVisible(true);*/
+	
+	}
+
+
+
+
+
+
+
+
+public void terminalTicTacToe(){
+	TicTacToe t = new TicTacToe();
+	String currentBoard = t.gameBoardPrintout();
 		//System.out.println(currentBoard);String gameBoard = gameBoardPrintout();
-		System.out.print(currentBoard);
+	System.out.print(currentBoard);
 		
-		boolean gameOverCondition = t.isGameOver();
+	boolean gameOverCondition = t.isGameOver();
 		
-		do{
+	do{
 		t.getInput();
 		gameOverCondition = t.isGameOver();
 		} while(gameOverCondition== false);
@@ -217,6 +263,15 @@ public class TicTacToe {
 		String outcome = t.howGameEnds();
 		System.out.println("Game Over");
       	System.out.println("Result: "+outcome);
+
+}
+
+
+	public static void main(String[] args) {
+		TicTacToeFrame tf = new TicTacToeFrame();
+	
+		
+		
  
 		
 		
